@@ -1,0 +1,27 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+header {
+    text-align: left;
+}
+
+
+body {
+    text-align: center;
+    font-family: sans-serif;
+
+}
+.startquiz {
+    width: 195px;
+    height: 55px;
+    border: none;
+    color: whitesmoke;
+    background: forestgreen;
+    cursor: pointer;
+    position: relative;
+    border-radius: 10px;
+    
+}
