@@ -7,32 +7,51 @@
     <link rel="stylesheet" href="./assets/style.css"/>
     <title>Code Quiz</title>
 </head>
-<header><a href="#highscores">View high scores</a></header>
+ <!--High Scores link-->
+
+<header id="headerHighScores"><a href="highscores">View high scores</a>
+    <div id="quizTimeLeft"></div>
+
+
+
+</header>
     <br>
-<body><!--High Scores link-->
+<body>
+ 
    
-    <!--Ordered list where questions and answers will display-->
-    <h1>Fancy your Food Quiz</h1>
-    <div>
-        <p id="rulesEl">Try to answer the following food related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
+<!--Instructions and begin quiz button container-->
+
+    <div class ="instructionsContainer">
+    <h1 id ="title">Fancy your Food Quiz</h1>
+    
+        <h3 id="rulesEl">Try to answer the following food related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!</h3>
         <br>
-        <button class="startquiz">Start Quiz</button>
+        <button class="startQuiz">Start Quiz</button>
+    </div>
         <br>
-        <p>What three vegetables make up a mirepoix?</p>
+        <div class ="questionsContainer">
+
+              <!--Ordered list where questions and answers will display-->
+
+         <h1 id="1" class="questionOnPage">What three vegetables make up a mirepoix?</h1>
         <br>
-        <div class="container">
+        
         <ul>
         
-            <li> <button id="one-of-one" class="right"> 1. Carrots, Potatoes, Greeen Beans </button></li> 
-            <li><button id ="two-of-two" class="right">2. Potatoes, Cabbage, Celery </button></li>
-           <li> <button id="three-of-three" class="wrong">3. Potatoes, Cabbage, Celery </button></li>
-           <li> <button id="four-of-four" class="right">4. Carrots, Onions, Celery </button></li>
+            <li> <button class="questions"> 1. Carrots, Potatoes, Greeen Beans </button></li> 
+            <li><button class="questions">2. Potatoes, Cabbage, Celery </button></li>
+           <li> <button class="questions">3. Potatoes, Cabbage, Celery </button></li>
+           <li> <button class="questions">4. Carrots, Onions, Celery </button></li>
             </ul>
 
             
 
         </div>
-    </div>
+
+        <div class="endOfQuiz">
+            <H1>ITS OVER!</H1>
+        </div>
+    </div> 
     <script src="./assets/script.js"></script>
 </body>
 </html>
