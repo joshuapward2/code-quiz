@@ -34,18 +34,18 @@ var myQuestions = [
 var scoresArray = [];
 
 var scoresLink = document.getElementById("#headerHighScores");
-var timerEl = document. getElementById("quizTimeLeft");
+var timerEl = document. getElementById("#quizTimeLeft");
 
 
-var instructionsContainerEl = document.querySelector("instructionsContainer");
+var instructionsContainerEl = document.querySelector(".instructionsContainer");
 var startQuizBtn = document.querySelector(".startQuiz");
-var instructions = document.querySelector("rulesEl");
-var titleEl = document.getElementById("title");
+var instructions = document.querySelector(".rulesEl");
+var titleEl = document.getElementById(".title");
 
-var questionsContainerEl = document.querySelector("questionsContainer");
-var actualQuestion = document.querySelector("questionOnPage")
+var questionsContainerEl = document.querySelector(".questionsContainer");
+var actualQuestion = document.querySelector(".questionOnPage")
 
-var quizComplete = document.querySelector("endOfQuiz")
+var quizComplete = document.querySelector(".endOfQuiz")
 
 
 
@@ -59,7 +59,7 @@ var beginQuiz =function() {
     questionsContainerEl.style.display = "block";
 
     startTimer = setInterval(function() {
-        timeLeft--;
+        timeLeft --;
         timerEl.textContent = "Time:" + timeLeft;
         if(timeLeft < 0) {
             endQuiz();
