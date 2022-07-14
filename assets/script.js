@@ -71,6 +71,8 @@ var beginQuiz = function (e) {
         }
     }, 1000);
 
+    nextQ();
+
     // for (let i =0; i < myQuestions[ticker].answers.length; i++)  {
     // var currentAnswer = document.getElementById(i + 1);
     // currentAnswer.textContent = myQuestions[ticker].answers[i];
@@ -99,8 +101,15 @@ function scoreKeeper() {
 
 
 function nextQ(e) {
-    e.preventDefault();
-    ticker = ticker + 1;
+    if (e) {
+        e.preventDefault();
+        console.log(e);
+        console.log(e.target.getAttribute('data-index'));
+        console.log("ticker: " + ticker);
+        console.log(myQuestions[ticker].correct);
+        console.log(parseInt(e.target.getAttribute('data-index')) === myQuestions[ticker].correct);
+        ticker = ticker + 1;
+    }
     actualQuestion.textContent = myQuestions[ticker].question
     answerBtns[0].textContent = myQuestions[ticker].answers[0]
     answerBtns[1].textContent = myQuestions[ticker].answers[1]
@@ -119,7 +128,6 @@ answerBtns[3].addEventListener("click", nextQ);
 
 
 var nextQuestion = function () {
-
 
     var theQuestion = myQuestions[ticker].question;
     actualQuestion.textContent = theQuestion;
@@ -168,6 +176,7 @@ var endQuiz = function () {
     quizComplete.style.display = "block";
 
 }
+
 
 
 
