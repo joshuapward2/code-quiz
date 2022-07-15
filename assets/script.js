@@ -1,3 +1,6 @@
+
+//Questions Array//
+
 var myQuestions = [
 
     {
@@ -31,7 +34,12 @@ var myQuestions = [
     }
 
 ];
+
+
+
 var scoresArray = [];
+
+//Dom elements pulled and global variables created//
 
 var scoresLink = document.getElementById("headerHighScores");
 var timerEl = document.getElementById("quizTimeLeft");
@@ -54,7 +62,7 @@ var ticker = 0;
 var timeLeft = 75;
 
 
-// alert(startQuizBtn)
+// alert(startQuizBtn), 
 
 var beginQuiz = function (e) {
     e.preventDefault()
@@ -71,43 +79,30 @@ var beginQuiz = function (e) {
         }
     }, 1000);
 
+//This call, which is declared farther down gets the pages to turn//
+
     nextQ();
 
-    // for (let i =0; i < myQuestions[ticker].answers.length; i++)  {
-    // var currentAnswer = document.getElementById(i + 1);
-    // currentAnswer.textContent = myQuestions[ticker].answers[i];
-    // var buttonIndex = i + 1;
-    // currentAnswer.addEventListener("click", () => {
-    //  answerBtns[0].addEventListener("click", checkAnswer(i + 1))
-    //     ;
-
-
-    // });
-
-    // }
-    // nextQuestion();
+    
 };
 
 
-function scoreKeeper() {
-    if(myQuestions[0].answers[2]===answerBtns) {
-        scoresLink = scoresLink + "10";
+// function scoreKeeper() {
+//     if(myQuestions[0].answers[2]===answerBtns) {
+//         scoresLink = scoresLink + "10";
     
-    }
-    else{ timerEl=timerEl-"10";
+//     }
+//     else{ timerEl=timerEl-"10";
     
-    }
-}
+//     }
+// }
 
+//conditionals that turn the page on an event//
 
 function nextQ(e) {
     if (e) {
         e.preventDefault();
-        console.log(e);
-        console.log(e.target.getAttribute('data-index'));
-        console.log("ticker: " + ticker);
-        console.log(myQuestions[ticker].correct);
-        console.log(parseInt(e.target.getAttribute('data-index')) === myQuestions[ticker].correct);
+    
         ticker = ticker + 1;
     }
     actualQuestion.textContent = myQuestions[ticker].question
@@ -116,6 +111,8 @@ function nextQ(e) {
     answerBtns[2].textContent = myQuestions[ticker].answers[2]
     answerBtns[3].textContent = myQuestions[ticker].answers[3]
 }
+
+//Event listener//
 
 
 startQuizBtn.addEventListener("click", beginQuiz)
@@ -141,17 +138,17 @@ var nextQuestion = function () {
 
 };
 
-
+//check answers function//
 
 
 function checkAnswer(buttonIndex) {
 
     var correctAnswer = myQuestions[ticker].correct;
     if (correctAnswer === buttonIndex) {
-        //    (setTimeout(), 250);
+        
     }
     else {
-        // (setTimeout(), 250);
+        
         timeLeft -= 10;
         timerEl.textContent = "Time" + timeLeft;
     }
