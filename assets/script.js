@@ -87,16 +87,6 @@ var beginQuiz = function (e) {
 };
 
 
-// function scoreKeeper() {
-//     if(myQuestions[0].answers[2]===answerBtns) {
-//         scoresLink = scoresLink + "10";
-    
-//     }
-//     else{ timerEl=timerEl-"10";
-    
-//     }
-// }
-
 //conditionals that turn the page on an event//
 
 function nextQ(e) {
@@ -122,7 +112,7 @@ answerBtns[2].addEventListener("click", nextQ);
 answerBtns[3].addEventListener("click", nextQ);
 
 
-
+//function that defines what the question is and, where its displayed on the page//
 
 var nextQuestion = function () {
 
